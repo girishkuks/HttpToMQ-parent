@@ -6,25 +6,14 @@
 
 	<groupId>com.anz.api</groupId>
 	<artifactId>HttpToMQ-parent</artifactId>
-	<version>0.0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<properties>
-	<gitUrl>https://github.com/sanketsw/HttpToMQ-parent.git</gitUrl>
+	 <scm.url>https://master@10.52.36.21:8443/r/iib/HttpToMQ-parent.git</scm.url>
 	</properties>
 
-	<distributionManagement>
-		<repository>
-			<id>release</id>
-			<url>http://localhost:8081/artifactory/ext-release-local</url>
-			<uniqueVersion>true</uniqueVersion>
-		</repository>
-		<snapshotRepository>
-			<id>snapshot</id>
-			<url>http://localhost:8081/artifactory/ext-snapshot-local</url>
-			<uniqueVersion>true</uniqueVersion>
-		</snapshotRepository>
-	</distributionManagement>
+	
 
 	<scm>
 		<connection>scm:git:${gitUrl}</connection>
@@ -36,6 +25,7 @@
 		<module>HttpToMQ-lib</module>
 		<module>HttpToMQ-app</module>
 		<module>HttpToMQ-testjava</module>
+		<module>package</module>
 	</modules>
 	<build>
 		<plugins>
@@ -47,5 +37,18 @@
 		</plugins>
 
 	</build>
+	
+	<distributionManagement>
+                <repository>
+                        <id>release</id>
+                        <url>http://centralrepository.anz.com:8081/artifactory/ext-release-local</url>
+                        <uniqueVersion>true</uniqueVersion>
+                </repository>
+                <snapshotRepository>
+                        <id>snapshot</id>
+                        <url>http://centralrepository.anz.com:8081/artifactory/ext-snapshot-local</url>
+                        <uniqueVersion>true</uniqueVersion>
+                </snapshotRepository>
+    	</distributionManagement>
 
 </project>
